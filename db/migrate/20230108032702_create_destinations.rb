@@ -1,6 +1,6 @@
-class CreateTraveldations < ActiveRecord::Migration[7.0]
+class CreateDestinations < ActiveRecord::Migration[7.0]
   def change
-    create_table :traveldations do |t|
+    create_table :destinations do |t|
       t.string :country
       t.string :city
       t.text :description
