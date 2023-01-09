@@ -1,6 +1,7 @@
-<h1>Enter a new destination:</h1>
+<h1>Edit Destination details</h1>
 
 <% if @destination.errors.any? %>
+
 <h2>The following errors occured:</h2>
   <% @destination.errors.full_messages.each do |error_message| %>
     <li><%= error_message %></li>

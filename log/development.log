@@ -1304,3 +1304,583 @@ Processing by DestinationsController#index as HTML
 Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 3774)
 
 
+Started GET "/destinations" for ::1 at 2023-01-08 22:15:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 18060)
+  Rendered layout layouts/application.html.erb (Duration: 109.6ms | Allocations: 88182)
+Completed 200 OK in 121ms (Views: 112.4ms | ActiveRecord: 0.6ms | Allocations: 94862)
+
+
+Started GET "/destinations" for ::1 at 2023-01-08 22:15:50 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3834)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 4098)
+
+
+Started GET "/destinations/9" for ::1 at 2023-01-08 22:15:52 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/show.html.erb within layouts/application
+  Rendered destinations/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2750)
+Completed 200 OK in 16ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 5498)
+
+
+Started GET "/destinations" for ::1 at 2023-01-08 22:15:54 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3838)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 4102)
+
+
+Started GET "/destinations" for ::1 at 2023-01-08 22:17:00 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1569)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 4454)
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 0.7ms | Allocations: 5343)
+
+
+Started DELETE "/destinations/9" for ::1 at 2023-01-08 22:17:02 -0500
+Processing by DestinationsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/destinations_controller.rb:43:in `destroy'
+  [1m[36mDestination Destroy (1.6ms)[0m  [1m[31mDELETE FROM "destinations" WHERE "destinations"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/destinations_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/destinations_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/destinations/9
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms | Allocations: 2405)
+
+
+Started GET "/destinations/9" for ::1 at 2023-01-08 22:17:02 -0500
+Processing by DestinationsController#show as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:8:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 872)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Destination with 'id'=9):
+  
+app/controllers/destinations_controller.rb:8:in `show'
+Started GET "/destinations" for ::1 at 2023-01-08 22:17:02 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1244)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3845)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4100)
+
+
+Started GET "/destinations" for ::1 at 2023-01-08 22:20:14 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1280)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2146)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td>
+        <%= link_to 'Show'%, destination_path(destination_id) %>
+        <%= link_to 'Edit', edit_destination_path(destination_id)  %>
+        <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> 
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td>
+18:            <%= link_to 'Show'%, destination_path(destination_id) %>
+19:            <%= link_to 'Edit', edit_destination_path(destination_id)  %>
+20:            <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> 
+21:          </td>
+22:        </tr>
+23:        <% end %>
+24:      </tbody>
+25:    </table>
+  
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+app/views/destinations/index.html.erb:18: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:21:10 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1265)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 2143)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+18:          <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+19:          <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+20:        </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+  
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:21:11 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1253)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1484)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+18:          <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+19:          <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+20:        </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+  
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:22:11 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1253)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1484)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+18:          <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+19:          <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+20:        </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+  
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:22:13 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1189)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1257)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1488)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+18:          <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+19:          <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+20:        </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+  
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:22:14 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1253)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1484)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Showing all destinations</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @destination.each do |destination| %>
+    <tr>
+      <td><%= destination.country %></td>
+      <td><%= destination.city %></td>
+      <td><%= destination.description %></td>
+      <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+):
+1:    <h1>Showing all destinations</h1>
+2:    <table>
+3:      <thead>
+4:        <tr>
+5:          <th>Country</th>
+6:          <th>City</th>
+7:          <th>Description</th>
+8:          <th>Actions</th>
+9:        </tr>
+10:      </thead>
+11:      <tbody>
+12:        <% @destination.each do |destination| %>
+13:        <tr>
+14:          <td><%= destination.country %></td>
+15:          <td><%= destination.city %></td>
+16:          <td><%= destination.description %></td>
+17:          <td> <%= link_to 'Show'%, destination_path(destination_id) %> </td>
+18:          <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+19:          <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+20:        </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+  
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+app/views/destinations/index.html.erb:17: syntax error, unexpected ','
+Started GET "/destinations" for ::1 at 2023-01-08 22:22:50 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 5308)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 5375)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.8ms | Allocations: 6239)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destination_id' for #<ActionView::Base:0x0000000000cfd0>
+Did you mean?  destination
+               destination_url
+               destinations_url
+               destination_path
+               @destination):
+    14:       <td><%= destination.country %></td>
+    15:       <td><%= destination.city %></td>
+    16:       <td><%= destination.description %></td>
+    17:       <td> <%= link_to 'View', destination_path(destination_id) %> </td>
+    18:       <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+    19:       <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    20:     </tr>
+  
+app/views/destinations/index.html.erb:17
+app/views/destinations/index.html.erb:12
+Started GET "/destinations" for ::1 at 2023-01-08 22:23:19 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 5203)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 5270)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.2ms | Allocations: 6134)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destination_id' for #<ActionView::Base:0x0000000000d318>
+Did you mean?  destination
+               destination_url
+               destinations_url
+               destination_path
+               @destination):
+    15:       <td><%= destination.city %></td>
+    16:       <td><%= destination.description %></td>
+    17:       <td> <%= link_to 'View', destination_path(destination) %> </td>
+    18:       <td> <%= link_to 'Edit', edit_destination_path(destination_id) %></td>
+    19:       <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+    20:     </tr>
+    21:     <% end %>
+  
+app/views/destinations/index.html.erb:18
+app/views/destinations/index.html.erb:12
+Started GET "/destinations" for ::1 at 2023-01-08 22:23:30 -0500
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2244)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5141)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.3ms | Allocations: 6029)
+
+
+Started GET "/destinations/6/edit" for ::1 at 2023-01-08 22:23:31 -0500
+Processing by DestinationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/edit.html.erb within layouts/application
+  Rendered destinations/edit.html.erb within layouts/application (Duration: 35.2ms | Allocations: 6578)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 8795)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.5ms | Allocations: 9557)
+
+
+Started GET "/destinations/6" for ::1 at 2023-01-08 22:23:34 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/show.html.erb within layouts/application
+  Rendered destinations/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2751)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 3484)
+
+

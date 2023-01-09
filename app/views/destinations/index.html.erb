@@ -14,7 +14,9 @@
       <td><%= destination.country %></td>
       <td><%= destination.city %></td>
       <td><%= destination.description %></td>
-      <td>View,Edit,Delete</td>
+      <td> <%= link_to 'View', destination_path(destination.id) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination.id) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
     </tr>
     <% end %>
   </tbody>
