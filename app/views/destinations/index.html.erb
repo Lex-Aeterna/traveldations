@@ -5,7 +5,7 @@
       <th>Country</th>
       <th>City</th>
       <th>Description</th>
-      <th>Actions</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -14,10 +14,14 @@
       <td><%= destination.country %></td>
       <td><%= destination.city %></td>
       <td><%= destination.description %></td>
-      <td> <%= link_to 'View', destination_path(destination.id) %> </td>
-      <td> <%= link_to 'Edit', edit_destination_path(destination.id) %></td>
-      <td> <%= link_to 'Delete', destination_path(destination.id), data: {turbo_method: :delete} %> </td>
+      <td> <%= link_to 'View', destination_path(destination) %> </td>
+      <td> <%= link_to 'Edit', edit_destination_path(destination) %></td>
+      <td> <%= link_to 'Delete', destination_path(destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"} %> </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<p>
+<%= link_to 'Create new destination', new_destination_path %>
+</p>

@@ -1,11 +1,12 @@
 class DestinationsController < ApplicationController
 
+  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+
   def index
     @destination = Destination.all
   end
 
   def show
-    @destination = Destination.find(params[:id])
   end
 
   def new
@@ -14,7 +15,7 @@ class DestinationsController < ApplicationController
 
   def create
     #whitelisting the params
-    @destination = Destination.new(params.require(:destination).permit(:country, :city, :description))
+    @destination = Destination.new(destination_params)
     #save to db
     if @destination.save
       flash[:notice] = 'Destination saved succesfully'
@@ -25,12 +26,10 @@ class DestinationsController < ApplicationController
   end
 
   def edit
-    @destination = Destination.find(params[:id])
   end
 
   def update
-    @destination = Destination.find(params[:id])
-    if @destination.update(params.require(:destination).permit(:country, :city, :description))
+    if @destination.update(destination_params)
       flash[:notice] = 'Destination was updated sucessfully'
       redirect_to @destination
     else
@@ -39,10 +38,18 @@ class DestinationsController < ApplicationController
   end
 
   def destroy
-    @destination = Destination.find(params[:id])
     @destination.destroy
     flash[:notice] = 'Destination was deleted successfully'
-    redirect_to destination_path
+    redirect_to destinations_path
   end
   
+  private
+  
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+
+  def destination_params
+    params.require(:destination).permit(:country, :city, :description)
+  end
 end
