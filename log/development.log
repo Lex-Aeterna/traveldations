@@ -8740,3 +8740,25 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 37ms (Views: 32.9ms | Allocations: 8957)
 
 
+Started GET "/" for ::1 at 2023-01-15 01:00:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 611)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.18
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+warning package.json: No license field
+warning package.json: No license field
+error Command "webpack" not found.
+
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 442)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 5361.3ms | Allocations: 148320)
+Completed 200 OK in 5376ms (Views: 5366.3ms | ActiveRecord: 0.0ms | Allocations: 154452)
+
+
