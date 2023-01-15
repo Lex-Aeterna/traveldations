@@ -1,1 +1,10 @@
-<h1>Hello this is home page</h1>
+<div class="cover-container d-flex p-3 mx-auto flex-column">
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Traveldations</h1>
+    <p class="lead">Small world, big ideas</p>
+    <p class="lead">
+      <%= link_to 'Take me somewhere', destinations_path, class: "btn btn-lg btn-secondary" %>
+      <%= link_to 'About page', about_path, class: "btn btn-lg btn-secondary"  %>
+    </p>
+  </main>
+</div>
