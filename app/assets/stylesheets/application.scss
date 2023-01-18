@@ -1,0 +1,47 @@
+@import "bootstrap";
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  justify-content: center;
+}
+
+.navbar {
+  border-bottom: gray solid thin;
+}
+
+.container {
+  letter-spacing: .05rem;
+  border: gray solid thin;
+  border-radius: 5px;
+  background-image: url('photo-home1.jpeg');
+  background-position: center center;
+  background-size: cover;
+  height: 425px;
+  padding: 130px 0px;
+  margin: 50px auto;
+}
+
+.card-deck {
+}
+
+.lead {
+  margin: 2em 0;
+}
+
+.btn {
+  margin: 0.2rem;
+}
+
+h1 {
+  color: #fff
+}
+
+footer {
+  border-top: gray solid thin;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

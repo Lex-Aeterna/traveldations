@@ -2,3 +2,10 @@
 <p>Country: <%=@destination.country %></p>
 <p>City: <%=@destination.city %></p>
 <p>Description: <%=@destination.description %></p>
+<%= link_to 'Back', destinations_path %>
+<%= link_to 'Edit', edit_destination_path(@destination)%>
+<%= link_to 'Delete', destination_path(@destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"} %>
+
+<p>
+Created: <%= time_ago_in_words(@destination.created_at) %> ago, 
+edited: <%= time_ago_in_words(@destination.updated_at) %> ago </p>
