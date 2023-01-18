@@ -1,28 +1,24 @@
-<h1>Showing all destinations</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Description</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
+<h1 class="my-4">Our recommendations</h1>
+<%= link_to 'Create new destination', new_destination_path, class: "btn btn-outline-light btn-md" %>
+<%= link_to 'Back to homepage', root_path, class: "btn btn-outline-light btn-md" %>
+<div class="row row-cols-1 row-cols-md-3 g-4 m-4">
     <% @destination.each do |destination| %>
-    <tr>
-      <td><%= destination.country %></td>
-      <td><%= destination.city %></td>
-      <td><%= destination.description %></td>
-      <td> <%= link_to 'View', destination_path(destination) %> </td>
-      <td> <%= link_to 'Edit', edit_destination_path(destination) %></td>
-      <td> <%= link_to 'Delete', destination_path(destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"} %> </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p>
-<%= link_to 'Create new destination', new_destination_path %>
-<%= link_to 'Back to homepage', root_path %>
-</p>
+    <div class="col">
+    <div class="card h-100 text-bg-dark border-info mb-3" style="max-width: 18rem">
+      <!--- <img src="..." class="card-img-top" alt="..."> --->
+      <div class="card-body">
+        <h6 class="card-title fw-light"><%="Country: "%><%= destination.country %></h6>
+      <h6 class="card-title fw-light"><%="City: "%><%= destination.city %></h6>
+      <p class="card-text fw-light"><%="Spot: "%><%= destination.description %></p>
+      <%= link_to 'View', destination_path(destination), class: "btn btn-outline-light btn-sm" %>
+      <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-outline-light btn-sm" %>
+      <%= link_to 'Delete', destination_path(destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"}, class: "btn btn-outline-light btn-sm" %> 
+      </div>
+      <div class="card-footer border-info">
+        <small class="text-info">
+          Created: <%= time_ago_in_words(destination.created_at) %> ago</small>
+      </div>
+   </div>
+  </div>
+  <% end %>
+</div>
