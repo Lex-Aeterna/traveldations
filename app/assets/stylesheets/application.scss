@@ -21,6 +21,12 @@ body {
   margin: 70px auto;
 }
 
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
 
 .lead {
   margin: 2em 0;

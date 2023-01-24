@@ -1,4 +1,9 @@
 <h1>Showing destination details</h1>
+<p>Image: 
+  <% if @destination.image.variant(:thumb) %>
+    <%= image_tag @destination.image.variant(:thumb) %>
+  <% end %>
+</p>
 <p>Country: <%=@destination.country %></p>
 <p>City: <%=@destination.city %></p>
 <p>Description: <%=@destination.description %></p>
