@@ -2,18 +2,23 @@
 <div class="text-center">
   <%= link_to 'Back', destinations_path, class: "btn btn-outline-light btn-md" %>
 </div>
-<% if @destination.errors.any? %>
-
-<h2>The following errors occured:</h2>
-  <% @destination.errors.full_messages.each do |error_message| %>
-    <li><%= error_message %></li>
+<div class="container mt-4">
+  <% if @destination.errors.any? %>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <h4>The following errors occured:</h4>
+      <% @destination.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   <% end %>
-<% end %>
+</div>
+
 <div class ="col d-flex justify-content-center" style= "margin-top: 2em">
   <div class="card text-bg-dark border-info" style="width: 80%">
     <%= form_with(model: @destination, data: { turbo: false }, local: true) do |f| %>
-    <div class="row g-0" style="height: 400px">
-        <div class="card-img-overlay">
+      <div style="min-height: 50vh">
+        <div class="card-img-overlay" style="position: relative">
           <p class="card-text">
             <%= f.label :image %> <br>
             <%= f.file_field :image %>
@@ -33,8 +38,8 @@
           <p>
             <%= f.submit %>
           </p>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>

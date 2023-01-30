@@ -6,7 +6,7 @@
 </div>
 <div class ="col d-flex justify-content-center" style= "margin-top: 2em">
   <div class="card text-bg-dark border-info" style="width: 80%">
-    <div class="row g-0" style="height: 400px">
+    <div style="height: 50vh">
         <% if @destination.image.variant(:thumb) %>
         <%= image_tag @destination.image.variant(:thumb), class: "card-img-side opacity-25" %>
         <% end %>

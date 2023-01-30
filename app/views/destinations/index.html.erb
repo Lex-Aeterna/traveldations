@@ -6,7 +6,7 @@
   <div class="row row-cols-2 row-cols-md-4 g-4 m-4">
     <% @destination.each do |destination| %>
       <div class="col">
-        <div class="card text-bg-dark border-info mb-3" style="max-width: 25rem">
+        <div class="card h-100 text-bg-dark border-info mb-3" style="max-width: 25rem">
           <% if destination.image.variant(:thumb)%>
             <%= image_tag destination.image.variant(:thumb), class: "card-img-top card border-info" %>
           <% end %>
