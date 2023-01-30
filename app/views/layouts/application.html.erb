@@ -14,9 +14,7 @@
   <body>
     <div id="wrap">
     <%= render 'layouts/navigation'%> 
-    <% flash.each do |name, message| %>
-      <%= message %>
-    <% end %>
+    <%= render 'layouts/flashmsg'%>
     <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
