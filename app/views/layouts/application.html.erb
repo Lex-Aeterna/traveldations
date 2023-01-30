@@ -1,18 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Traveldations</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Traveldations</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag "turbo", type: "module" %>
   </head>
-  <body class="text-center">
+  <body>
+    <div id="wrap">
     <%= render 'layouts/navigation'%> 
     <% flash.each do |name, message| %>
       <%= message %>
     <% end %>
     <%= yield %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

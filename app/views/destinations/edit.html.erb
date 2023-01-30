@@ -1,5 +1,8 @@
-<h1>Edit Destination details</h1>
-
+<h1 class="my-4 text-center">Edit destination details</h1>
+<div class="text-center">
+  <%= link_to 'Delete', destination_path(@destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"}, class: "btn btn-outline-light btn-md" %>
+  <%= link_to 'Back', destination_path, class: "btn btn-outline-light btn-md" %>
+</div>
 <% if @destination.errors.any? %>
 
 <h2>The following errors occured:</h2>
@@ -7,25 +10,38 @@
     <li><%= error_message %></li>
   <% end %>
 <% end %>
-
-<%= form_with(model: @destination, data: { turbo: false }, local: true) do |f| %>
-<p> 
-  <%= f.label :country%> <br>
-  <%= f.text_field :country%>
-</p>
-<p> 
-  <%= f.label :city%> <br>
-  <%= f.text_field :city%></p>
-</p>
-<p> 
-  <%= f.label :description%> <br>
-  <%= f.text_area :description%></p>
-</p>
-
-<p>
-  <%= f.submit %>
-</p>
-
-<% end %>
-
-<%= link_to 'Back', destination_path %>
+<div class ="col d-flex justify-content-center" style= "margin-top: 2em">
+  <div class="card text-bg-dark border-info" style="width: 80%">
+    <%= form_with(model: @destination, data: { turbo: false }, local: true) do |f| %>
+    <div class="row g-0" style="height: 400px">
+        <% if @destination.image.variant(:thumb) %>
+        <%= image_tag @destination.image.variant(:thumb), class: "card-img-side opacity-25" %>
+        <% end %>
+        <div class="card-img-overlay">
+          <p class="card-text">
+            <%= f.label :image %> <br>
+            <%= f.file_field :image %>
+          </p>
+          <p class="card-text">
+            <%= f.label :country%> <br>
+            <%= f.text_field :country%>
+          </p>
+          <p class="card-text">
+            <%= f.label :city%> <br>
+            <%= f.text_field :city%>
+          </p>
+          <p class="card-text">  
+            <%= f.label :description%> <br>
+            <%= f.text_area :description%></p>
+          <p>
+          <p>
+            <%= f.submit %>
+          </p>
+      </div>
+    </div>
+    <% end %>
+    <div class="card-footer border-info text-center fst-italic">
+      <small class="text-info"> Created: <%= time_ago_in_words(@destination.created_at) %> ago </small>
+    </div>
+  </div>
+</div>
