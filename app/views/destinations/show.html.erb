@@ -1,16 +1,24 @@
-<h1>Showing destination details</h1>
-<p>Image: 
-  <% if @destination.image.variant(:thumb) %>
-    <%= image_tag @destination.image.variant(:thumb) %>
-  <% end %>
-</p>
-<p>Country: <%=@destination.country %></p>
-<p>City: <%=@destination.city %></p>
-<p>Description: <%=@destination.description %></p>
-<%= link_to 'Back', destinations_path %>
-<%= link_to 'Edit', edit_destination_path(@destination)%>
-<%= link_to 'Delete', destination_path(@destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"} %>
-
-<p>
-Created: <%= time_ago_in_words(@destination.created_at) %> ago, 
-edited: <%= time_ago_in_words(@destination.updated_at) %> ago </p>
+<h1 class="my-4 text-center">Showing destination details</h1>
+<div class="text-center">
+  <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-outline-light btn-md"%>
+  <%= link_to 'Delete', destination_path(@destination), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?"}, class: "btn btn-outline-light btn-md" %>
+  <%= link_to 'Back', destinations_path, class: "btn btn-outline-light btn-md" %>
+</div>
+<div class ="col d-flex justify-content-center" style= "margin-top: 2em">
+  <div class="card text-bg-dark border-info" style="width: 80%">
+    <div class="row g-0" style="height: 400px">
+        <% if @destination.image.variant(:thumb) %>
+        <%= image_tag @destination.image.variant(:thumb), class: "card-img-side opacity-25" %>
+        <% end %>
+        <div class="card-img-overlay">
+          <p class="card-text">Country: <%=@destination.country %></p>
+          <p class="card-text">City: <%=@destination.city %></p>
+          <p class="card-text">Description: <%=@destination.description %></p>
+          <p>
+      </div>
+    </div>
+    <div class="card-footer border-info text-center fst-italic">
+      <small class="text-info"> Created: <%= time_ago_in_words(@destination.created_at) %> ago </small>
+    </div>
+  </div>
+</div>

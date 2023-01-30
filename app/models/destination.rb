@@ -4,6 +4,6 @@ class Destination < ApplicationRecord
   validates :description, length: { in: 3..300 }
 
   has_one_attached :image do |attachable|
-      attachable.variant :thumb, resize_to_limit: [300,300]
+      attachable.variant :thumb, resize_to_limit: [400,400]
   end
 end

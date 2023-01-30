@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Traveldations</title>
@@ -12,11 +12,13 @@
       <%= javascript_include_tag "turbo", type: "module" %>
   </head>
   <body>
+    <div id="wrap">
     <%= render 'layouts/navigation'%> 
     <% flash.each do |name, message| %>
       <%= message %>
     <% end %>
     <%= yield %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>
