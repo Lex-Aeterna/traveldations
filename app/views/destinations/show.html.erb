@@ -6,14 +6,15 @@
 </div>
 <div class ="col d-flex justify-content-center" style= "margin-top: 2em">
   <div class="card text-bg-dark border-info" style="width: 80%">
-    <div style="height: 50vh">
+    <div style="height: 60vh">
         <% if @destination.image.variant(:thumb) %>
         <%= image_tag @destination.image.variant(:thumb), class: "card-img-side opacity-25" %>
         <% end %>
-        <div class="card-img-overlay">
+        <div class="card-img-overlay mb-5" style="overflow-y: auto;">
           <p class="card-text">Country: <%=@destination.country %></p>
           <p class="card-text">City: <%=@destination.city %></p>
-          <p class="card-text">Description: <%=@destination.description %></p>
+          <p class="card-text">Attraction: <%=@destination.attraction %></p>
+          <p class="card-text">Description: <br> <%=@destination.description %></p>
           <p>
       </div>
     </div>

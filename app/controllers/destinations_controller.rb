@@ -50,6 +50,6 @@ class DestinationsController < ApplicationController
   end
 
   def destination_params
-    params.require(:destination).permit(:image, :country, :city, :description)
+    params.require(:destination).permit(:image, :country, :city, :attraction, :description)
   end
 end
