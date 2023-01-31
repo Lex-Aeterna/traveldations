@@ -49,7 +49,7 @@ gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.2.3'
 gem 'jquery-rails'
-gem 'webpacker'
+gem 'webpacker', '~> 5.4.3'
 gem 'net-http'
 
 group :development, :test do
