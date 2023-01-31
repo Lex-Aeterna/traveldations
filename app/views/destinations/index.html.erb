@@ -13,7 +13,7 @@
           <div class="card-body">
             <h6 class="card-title fw-light">Country: <%= destination.country %></h6>
             <h6 class="card-title fw-light">City: <%= destination.city %></h6>
-            <p class="card-text fw-light ">Attraction: <%= destination.description %></p>
+            <h6 class="card-text fw-light ">Attraction: <%= destination.attraction %></h6>
             <div class="text-center">
               <%= link_to 'View', destination_path(destination), class: "btn btn-outline-light btn-sm" %>
               <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-outline-light btn-sm" %>
