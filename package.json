@@ -12,5 +12,12 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3"
+  },
+
+  "name": "traveldations",
+  "description": "travel blog",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.15.1"
   }
 }
