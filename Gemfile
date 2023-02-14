@@ -51,6 +51,7 @@ gem 'bootstrap', '~> 5.2.3'
 gem 'jquery-rails'
 gem 'webpacker', '~> 5.4.3'
 gem 'net-http'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
